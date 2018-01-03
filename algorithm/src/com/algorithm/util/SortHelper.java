@@ -38,7 +38,7 @@ public class SortHelper {
         for (int j = 0; j < swapTimes; j++) {
             int x = new Random().nextInt(Integer.MAX_VALUE) % n;
             int y = new Random().nextInt(Integer.MAX_VALUE) % n;
-            swap(array,x,y);
+            swap(array, x, y);
         }
 
         return array;
@@ -59,12 +59,15 @@ public class SortHelper {
     }
 
     public static boolean isSorted(int[] array) {
+
+        boolean result = true;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] > array[i + 1]) {
-                return false;
+            if (i > 0 && array[i] < array[i - 1]) {
+                result = false;
+                break;
             }
         }
-        return true;
+        return result;
     }
 
     public static int[] copyArray(int[] array) {
@@ -105,6 +108,7 @@ public class SortHelper {
         System.out.println(sortName + "花费了" + spendtime + "微秒");
 
         assert (isSorted(array));
+//        assert (false);
 
         return array;
 
