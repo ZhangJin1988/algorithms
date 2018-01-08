@@ -54,8 +54,7 @@ public class SortHelper {
 
     public static void printArray(int[] array) {
         for (int i : array) {
-            System.out.print(i);
-            System.out.print(" ");
+            System.out.print(i + " ");
         }
     }
 
@@ -65,6 +64,7 @@ public class SortHelper {
             if (array[i] < array[i -1]) {
                 return false;
             }
+
         }
         return true;
     }
