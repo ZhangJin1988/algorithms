@@ -54,26 +54,19 @@ public class SortHelper {
 
     public static void printArray(int[] array) {
         for (int i : array) {
-            System.out.println(i);
+            System.out.print(i);
+            System.out.print(" ");
         }
     }
 
     public static boolean isSorted(int[] array) {
-<<<<<<< Updated upstream
 
-        boolean result = true;
-        for (int i = 0; i < array.length; i++) {
-            if (i > 0 && array[i] < array[i - 1]) {
-                result = false;
-                break;
-=======
         for (int i = 1; i < array.length; i++) {
             if (array[i] < array[i -1]) {
                 return false;
->>>>>>> Stashed changes
             }
         }
-        return result;
+        return true;
     }
 
     public static int[] copyArray(int[] array) {
@@ -110,8 +103,8 @@ public class SortHelper {
         long endtime = System.currentTimeMillis();
 
         long spendtime = (endtime - starttime);
-
-        System.out.println(sortName + "花费了" + spendtime + "微秒");
+        System.out.println("--------");
+        System.out.println(sortName + "花费了" + spendtime + "毫秒");
 
         assert (isSorted(array));
 //        assert (false);

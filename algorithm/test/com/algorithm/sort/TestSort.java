@@ -27,10 +27,11 @@ public class TestSort {
         int[] tempArray = SortHelper.generateNearlyOrderArray(10,2);
         SortHelper.printArray(tempArray);
 
-        int[] array = SortHelper.generateRandomArray(100, 1, 1000);
+        int[] array = SortHelper.generateRandomArray(10000, 1, 100000);
         int[] array1 = SortHelper.copyArray(array);
 
         int[] array2 = SortHelper.copyArray(array);
+        int[] array3 = SortHelper.copyArray(array);
 
         InsertSort sort = new InsertSort();
 
@@ -42,6 +43,9 @@ public class TestSort {
         SortHelper.printArray(array);
 
         array = SortHelper.sortBySortNameToSeeSpendTime(array2, sort, "insertSortBetter");
+        SortHelper.printArray(array);
+        ShellSort sort2 = new ShellSort();
+        array = SortHelper.sortBySortNameToSeeSpendTime(array3, sort2, "shellSort");
         SortHelper.printArray(array);
 
 

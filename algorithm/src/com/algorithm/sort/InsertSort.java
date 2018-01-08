@@ -8,16 +8,9 @@ import com.algorithm.util.SortHelper;
  */
 public class InsertSort {
     public int[] insertSort(int[] array) {
-
         for (int i = 1; i < array.length; i++) {
-//            int index = i;
-            for (int j = i; j > 0; j--) {
-//                System.out.println(j);
-                if (array[j] < array[j - 1]) {
-                    array = SortHelper.swap(array, j, j - 1);
-                } else {
-                    break;
-                }
+            for (int j = i; j > 0 && array[j] < array[j - 1]; j--) {
+                array = SortHelper.swap(array, j, j - 1);
             }
         }
 
@@ -27,11 +20,14 @@ public class InsertSort {
     public int[] insertSortBetter(int[] array) {
 
         for (int i = 1; i < array.length; i++) {
+            //先把要判断的值暂存起来
             int e = array[i];
             int j;
-            for (j = i; j > 0 && array[j] > e; j--) {
+            //如果前面的值 比 暂存的值大 那么就把前面赋值到当前位置
+            for (j = i; j > 0 && array[j-1] > e; j--) {
                 array[j] = array[j - 1];
             }
+            //最后遍历完了
             array[j] = e;
         }
 
