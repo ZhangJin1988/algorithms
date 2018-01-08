@@ -31,17 +31,24 @@ public class TestSort {
         int[] array1 = SortHelper.copyArray(array);
 
         int[] array2 = SortHelper.copyArray(array);
+        int[] array3 = SortHelper.copyArray(array);
 
         InsertSort sort = new InsertSort();
 
-        array = SortHelper.sortBySortNameToSeeSpendTime(array, sort, "insertSort");
-        SortHelper.printArray(array);
+//        array = SortHelper.sortBySortNameToSeeSpendTime(array, sort, "insertSort");
+//        SortHelper.printArray(array);
+//
+//        SelectionSort sort1 = new SelectionSort();
+//        array = SortHelper.sortBySortNameToSeeSpendTime(array1, sort1, "selectionSort");
+//        SortHelper.printArray(array);
+//
+//        array = SortHelper.sortBySortNameToSeeSpendTime(array2, sort, "insertSortBetter");
+//        SortHelper.printArray(array);
 
-        SelectionSort sort1 = new SelectionSort();
-        array = SortHelper.sortBySortNameToSeeSpendTime(array1, sort1, "selectionSort");
-        SortHelper.printArray(array);
 
-        array = SortHelper.sortBySortNameToSeeSpendTime(array2, sort, "insertSortBetter");
+        BubbleSort bubbleSort = new BubbleSort();
+
+        array = SortHelper.sortBySortNameToSeeSpendTime(array3, bubbleSort, "bubbleSort");
         SortHelper.printArray(array);
 
 

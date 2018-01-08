@@ -54,24 +54,19 @@ public class SortHelper {
 
     public static void printArray(int[] array) {
         for (int i : array) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
     }
 
     public static boolean isSorted(int[] array) {
-<<<<<<< Updated upstream
 
         boolean result = true;
         for (int i = 0; i < array.length; i++) {
             if (i > 0 && array[i] < array[i - 1]) {
                 result = false;
                 break;
-=======
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < array[i -1]) {
-                return false;
->>>>>>> Stashed changes
             }
+
         }
         return result;
     }
