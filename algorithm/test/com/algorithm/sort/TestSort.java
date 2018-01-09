@@ -64,7 +64,7 @@ public class TestSort {
 //        int[] tempArray = SortHelper.generateNearlyOrderArray(10, 2);
 //        SortHelper.printArray(tempArray);
 
-        int[] array = SortHelper.generateRandomArray(5, 1, 100000);
+        int[] array = SortHelper.generateRandomArray(100, 1, 100000);
 //        int[] array1 = SortHelper.copyArray(array);
 
 //        int[] array2 = SortHelper.copyArray(array);
@@ -74,7 +74,7 @@ public class TestSort {
         MergeSort mergeSort = new MergeSort();
 //        mergeSort.sort(array);
 //        SortHelper.isSorted(array);
-        array = SortHelper.sortBySortNameToSeeSpendTime(array, mergeSort, "sort");
+        SortHelper.sortBySortNameToSeeSpendTime(array, mergeSort, "sort");
         SortHelper.printArray(array);
 
     }
