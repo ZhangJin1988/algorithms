@@ -12,6 +12,45 @@ public class MergeSort {
         return sorted;
     }
 
+
+
+    public int[] sortBetter(int[] array) {
+
+
+        int[] sorted = new int[array.length];
+        mergeSort(array, 0, array.length - 1);
+
+
+        return sorted;
+    }
+
+
+    public void mergeSortBetter(int[] array, int l, int r) {
+
+        //l r 都是数组下标
+
+        if (l >= r) {
+            return;
+        }
+
+//        if (l -r < 16 ) {
+//            InsertSort insertSort = new InsertSort();
+//            insertSort.insertSort(array);
+//        }
+
+
+        int mid = (r + l) / 2;
+        mergeSort(array, l, mid);
+        mergeSort(array, mid + 1, r);
+        if(array[mid]>array[mid+1]){
+            merge(array, l, mid, r);
+        }
+    }
+
+
+
+
+
     public void mergeSort(int[] array, int l, int r) {
 
         //l r 都是数组下标
@@ -20,13 +59,7 @@ public class MergeSort {
             return;
         }
         int mid = (r + l) / 2;
-//        int[] sorted1 = new int[mid + 1];
-//        int[] sorted2 = new int[r - mid];
-
-
         mergeSort(array, l, mid);
-        System.out.print(mid + 1 + " ");
-        System.out.print(r + " ");
         mergeSort(array, mid + 1, r);
         merge(array, l, mid, r);
     }

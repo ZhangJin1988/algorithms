@@ -16,9 +16,9 @@ public class TestSort {
 
         SelectionSort sort = new SelectionSort();
 
-        array = SortHelper.sortBySortNameToSeeSpendTime(array, sort, "selectionSort");
+        SortHelper.sortBySortNameToSeeSpendTime(array, sort, "selectionSort");
 
-//        SortHelper.printArray(array);
+        SortHelper.printArray(array);
 
     }
 
@@ -61,21 +61,13 @@ public class TestSort {
 
     @Test
     public void testMergeSort() {
-//        int[] tempArray = SortHelper.generateNearlyOrderArray(10, 2);
-//        SortHelper.printArray(tempArray);
-
-        int[] array = SortHelper.generateRandomArray(100, 1, 100000);
-//        int[] array1 = SortHelper.copyArray(array);
-
-//        int[] array2 = SortHelper.copyArray(array);
-//        int[] array3 = SortHelper.copyArray(array);
-
-
+        int[] array = SortHelper.generateRandomArray(10000, 1, 100000);
+        int[] array1 = SortHelper.copyArray(array);
         MergeSort mergeSort = new MergeSort();
-//        mergeSort.sort(array);
-//        SortHelper.isSorted(array);
         SortHelper.sortBySortNameToSeeSpendTime(array, mergeSort, "sort");
         SortHelper.printArray(array);
+        SortHelper.sortBySortNameToSeeSpendTime(array1, mergeSort, "sortBetter");
+        SortHelper.printArray(array1);
 
     }
 }
