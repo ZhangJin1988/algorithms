@@ -74,16 +74,16 @@ public class TestSort {
 
     @Test
     public void testQuickSort() {
-        int[] array = SortHelper.generateRandomArray(1000, 1, 100000);
+        int[] array = SortHelper.generateRandomArray(1000000, 1, 100000);
         int[] array1 = SortHelper.copyArray(array);
         int[] array2 = SortHelper.copyArray(array);
         QuickSort quickSort = new QuickSort();
         SortHelper.sortBySortNameToSeeSpendTime(array, quickSort, "sort");
-        SortHelper.printArray(array);
+//        SortHelper.printArray(array);
         SortHelper.sortBySortNameToSeeSpendTime(array1, quickSort, "twoRoadSort");
-        SortHelper.printArray(array1);
+//        SortHelper.printArray(array1);
         SortHelper.sortBySortNameToSeeSpendTime(array2, quickSort, "threeRoadSort");
-        SortHelper.printArray(array2);
+//        SortHelper.printArray(array2);
 
     }
 }
