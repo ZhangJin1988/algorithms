@@ -64,6 +64,7 @@ public class InsertSort {
     }
 
 
+    //没想清楚  需要再次推敲
     private int[] inertSortBetter(int[] array) {
         int m = array.length;
         int temp;
@@ -71,18 +72,21 @@ public class InsertSort {
         for (int i = 1; i < m; i++) {
             temp = array[i];
             j = i;
-            for (; j > 0; j--) {
-                if (array[j] <= array[j - 1]) {
+            for (j--; j >= 0; j--) {
+                if (array[j] > temp) {
                     System.out.println("判断之前的j是" + j);
-                    array[j] = array[j-1];
-                }else if(array[j] > array[j - 1]){
-                    break;
+                    array[j + 1] = array[j];
+                    continue;
                 }
+                break;
+
 
             }
 
             System.out.println("判断之后的j是" + j);
-            array[j] = temp;
+            if (j + 1 < i) {
+                array[j+1] = temp;
+            }
         }
 
 
