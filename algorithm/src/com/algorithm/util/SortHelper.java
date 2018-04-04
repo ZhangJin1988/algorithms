@@ -56,6 +56,7 @@ public class SortHelper {
         for (int i : array) {
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 
     public static boolean isSorted(int[] array) {
