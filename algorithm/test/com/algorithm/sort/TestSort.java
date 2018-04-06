@@ -64,9 +64,10 @@ public class TestSort {
         int[] array = SortHelper.generateRandomArray(10000, 1, 100000);
         int[] array1 = SortHelper.copyArray(array);
         MergeSort mergeSort = new MergeSort();
-        SortHelper.sortBySortNameToSeeSpendTime(array, mergeSort, "sort");
+        int[] sorts = SortHelper.sortBySortNameToSeeSpendTime(array, mergeSort, "sort");
         SortHelper.printArray(array);
         SortHelper.sortBySortNameToSeeSpendTime(array1, mergeSort, "sortBetter");
+        System.out.println(SortHelper.isSorted(sorts));
         SortHelper.printArray(array1);
 
     }
