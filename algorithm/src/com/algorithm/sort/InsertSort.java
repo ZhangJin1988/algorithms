@@ -43,10 +43,7 @@ public class InsertSort {
 
 
     private int[] inertSort2(int[] array) {
-
-
         int m = array.length;
-
         for (int i = 1; i < m; i++) {
             for (int j = i; j > 0; j--) {
                 if (array[j] < array[j - 1]) {
@@ -56,14 +53,8 @@ public class InsertSort {
                 }
             }
         }
-
-
         return array;
-
-
     }
-
-
     //没想清楚  需要再次推敲
     private int[] inertSortBetter(int[] array) {
         int m = array.length;
@@ -74,16 +65,13 @@ public class InsertSort {
             j = i;
             for (j--; j >= 0; j--) {
                 if (array[j] > temp) {
-                    System.out.println("判断之前的j是" + j);
+//                    System.out.println("判断之前的j是" + j);
                     array[j + 1] = array[j];
                     continue;
                 }
                 break;
-
-
             }
-
-            System.out.println("判断之后的j是" + j);
+//            System.out.println("判断之后的j是" + j);
             if (j + 1 < i) {
                 array[j+1] = temp;
             }
@@ -91,6 +79,29 @@ public class InsertSort {
 
 
         return array;
+
+
+    }
+
+
+    public int[]  inertSortBetter3(int[] array){
+        int length = array.length;
+        for(int i=1;i<length;i++){
+            int j = i;
+            int temp = array[i];
+            for(--j;j>=0;j--){
+                if(array[j]>temp){
+                     array[j+1] = array[j];
+                     continue;
+                }
+                break;
+            }
+            if(j+1<i){
+                array[j+1] = temp;
+            }
+        }
+        return array;
+
 
 
     }
@@ -112,7 +123,7 @@ public class InsertSort {
         SortHelper.printArray(ints2);
 
 
-        int[] ints3 = insertSort.inertSortBetter(ints2);
+        int[] ints3 = insertSort.inertSortBetter3(ints2);
         System.out.println("--------");
         SortHelper.printArray(ints3);
 

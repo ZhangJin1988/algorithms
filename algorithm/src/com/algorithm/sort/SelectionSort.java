@@ -1,5 +1,7 @@
 package com.algorithm.sort;
 
+import com.algorithm.util.SortHelper;
+
 /**
  * @author zhangjin
  * @since 2017/4/24
@@ -18,6 +20,31 @@ public class SelectionSort {
             swap(array, i, minIndex);
 
         }
+
+        return array;
+    }
+
+
+    public int[] selectsortBetter(int[] array){
+
+
+        int length = array.length;
+
+        for(int i=0;i<length;i++){
+            int min = i;
+            for(int j=i+1;j<length;j++){
+                if(array[j]<array[min]){
+                    min = j;
+//                    continue;
+                }
+            }
+            swap(array,i,min);
+
+
+        }
+
+
+
 
         return array;
     }
@@ -44,6 +71,16 @@ public class SelectionSort {
         return true;
     }
 
+
+    public static void main(String[] args) {
+
+        int[] ints = SortHelper.generateRandomArray(10, 1, 20);
+        SortHelper.printArray(ints);
+        SelectionSort selectionSort = new SelectionSort();
+        int[] ints1 = selectionSort.selectsortBetter(ints);
+        System.out.println("---------");
+        SortHelper.printArray(ints1);
+    }
 //    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 ////        int[] array = new int[]{3, 1, 3, 5, 7, 88, 999, 234, 343515, 31241, 242, 14};
 //        int[] array = SortHelper.generateRandomArray(10, 1, 200);
