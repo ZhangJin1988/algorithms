@@ -5,30 +5,26 @@ import com.algorithm.util.SortHelper;
 /**
  * Created by zhangjin on 2018/4/6.
  */
-public class ShellSortTest
-{
+public class ShellSortTest {
 
 
-    public int[] shellSort(int[] array){
+    public int[] shellSort(int[] array) {
         int length = array.length;
-
-//        int i,j,gap;
-//        gap = length/2;
-        for(int gap=length/2;gap>=1;gap=gap/2){
-
-            //插入排序
-            for(int i=gap;i<length;i+=gap){
-                for(int j=i;j>=gap;j-=gap){
-                    if(array[j-gap]>array[j]){
-                        SortHelper.swap(array,j,j-gap);
+        int i, j, k, gap;
+        for (gap = length / 2; gap >= 1; gap = gap / 2) {
+            for (i = 0; i < gap; i++) {
+                //插入排序
+                for (j = i + gap; j < length; j += gap) {
+                    for (k = j; k >= gap; k -= gap) {
+                        if (array[k - gap] > array[k]) {
+                            SortHelper.swap(array, k, k - gap);
+                        }
                     }
-
-
                 }
             }
         }
 
-        return  array;
+        return array;
     }
 
 
