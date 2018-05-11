@@ -46,7 +46,7 @@ public class TestSort {
 //        SortHelper.printArray(array);
 
 
-        BubbleSort bubbleSort = new BubbleSort();
+        BubbleSortTest bubbleSort = new BubbleSortTest();
 
         array = SortHelper.sortBySortNameToSeeSpendTime(array3, bubbleSort, "bubbleSort");
         SortHelper.printArray(array);
