@@ -1,5 +1,7 @@
 package com.algorithm.sort;
 
+import com.algorithm.util.SortHelper;
+
 public class MergeSort {
 
     public int[] sort(int[] array) {
@@ -108,6 +110,14 @@ public class MergeSort {
     }
 
 
+    public static void main(String[] args) {
+        int[] array = new int[]{121312, 242312321, 123213, 2323, 343, 234234, 43324, 23224323, 23423423};
+        MergeSort mergeSortTest = new MergeSort();
+        mergeSortTest.sort(array);
+        SortHelper.printArray(array);
+
+
+    }
 
 
 //    public int[] merge(int[] array, int l, int mid, int r) {

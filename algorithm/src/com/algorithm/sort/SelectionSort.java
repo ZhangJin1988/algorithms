@@ -8,6 +8,13 @@ import com.algorithm.util.SortHelper;
  * 选择排序
  */
 public class SelectionSort {
+
+//    private float sss = 1996;
+//    private int a=0xDada_Cafe;
+//    private float b=0x1.fffffeP+127f;
+//    private float c=1996;
+    private float d=1996.3f;
+
     public  int[] selectionSort(int[] array) {
 
         for (int i = 0; i < array.length; i++) {
